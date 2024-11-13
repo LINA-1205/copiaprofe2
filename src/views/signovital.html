@@ -93,34 +93,27 @@
                 </div>
                 <div class="col-12 col-md-5 text-white border-start">
                     <h3>
-                        REGISTRA TU SIGNO VITAL
+                        REGISTRO DE SIGNOS VITALES
                     </h3>
                     <form>
                         <div class="mb-3">
-                            <label class="form-label">Fecha de la toma</label>
-                            <input type="date" class="form-control" id="">
+                            <label class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombresignovital">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Descripcion</label>
-                            <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a comment here" id=""></textarea>
-                                <label for="floatingTextarea">Comentarios</label>
-                              </div>
+                            <label class="form-label">Valor</label>
+                            <input type="text" class="form-control" id="valorsignovital">
                         </div>
 
                         <div class="mb-3">
-                            <select class="form-select" id="">
-                                <option selected>Selecciona un signo vital</option>
-                                <option value="1">Presión sanguínea</option>
-                                <option value="2">Temperatura</option>
-                                <option value="3">Saturación de oxigeno</option>
-                                <option value="4">Pulso sanguíneo</option>
-                              </select>
+                            <div class="col-6">
+                              <label class="form-label">Fecha medida</label>
+                              <input type="date" class="form-control" id="fechamedidasignovital">
+
+                            </div>
                         </div>
 
-                        <button class="btn btn-primary">
-                            ENVIAR
-                        </button>
+                        <button class="btn btn-primary w-100" type="submit" id="botonregistrosignovital">Regristrar</button>
                     </form>
                 </div>
             </div>
@@ -131,7 +124,8 @@
 
 
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="..//controllers/controladoressignovital.js"></script>
 </body>
 </html>
