@@ -75,12 +75,18 @@ let pacientes = [
 
 //6. Se crea una etiqueta para poner el nombre del paciente
 let nombre = document.createElement("h2"); 
+let ips = document.createElement("p"); 
+let telefono = document.createElement("p"); 
 
 nombre.textContent = paciente.nombre;
+ips.textContent = paciente.ips;
+telefono.textContent = paciente.telefono;
 
 
 //PASO FINAL (ORDENANDO LAS CARTAS)
     tarjeta.appendChild(nombre);
+    tarjeta.appendChild(ips);
+    tarjeta.appendChild(telefono);
     columna.appendChild(tarjeta);
     fila.appendChild(columna);
 

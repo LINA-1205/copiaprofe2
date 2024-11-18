@@ -1,30 +1,39 @@
+let nombreEnfermedad = document.getElementById("nombreenfermedad");
+let sintomasEnfermedad = document.getElementById("sintomasenfermedad");
+let clasificacionEnfermedad = document.getElementById("clasificacionenfermedad");
+let gradoEnfermedad = document.getElementById("gradoenfermedad");
+let probabilidadDeVidaEnfermedad = document.getElementById("probabilidadvidaenfermedad");
 
-let nombreEnfermedad=document.getElementById("nombreenfermedad")
-let sintomasEnfermedad=document.getElementById("sintomasenfermedad")
-let clasificacionEnfermedad=document.getElementById("clasificacionenfermedad")
-let gradoEnfermedad=document.getElementById("gradoenfermedad")
-let probabilidadVidaEnfermedad=document.getElementById("probabilidaddevida")
+let botonRegistroEnfermedad = document.getElementById("botonregistroenfermedad");
 
-let botonRegistroEnfermedad=document.getElementById("botonregistroenfermedad")
+botonRegistroEnfermedad.addEventListener("click", function(evento){
+    evento.preventDefault();
 
-botonRegistroEnfermedad.addEventListener("click",function(evento){
-    evento.preventDefault()
-    
+    datosFormularioEnfermedad = {
 
+        nombre: nombreEnfermedad.value,
+        sintomas: sintomasEnfermedad.value,
+        clasificacion: clasificacionEnfermedad.value,
+        grado: gradoEnfermedad.value,
+        probabilidadVida: probabilidadDeVidaEnfermedad.value
 
-let datosFormularioEnfermedad={
-    nombre:nombreEnfermedad.value,
-    sintomas:sintomasEnfermedad.value,
-    clasificacion:clasificacionEnfermedad.value,
-    probabilidad:probabilidadVidaEnfermedad.value
+    }
 
-}
+    console.log(datosFormularioEnfermedad);
 
-console.log(datosFormularioEnfermedad)
-
-Swal.fire({
-    title: "Registro Exitoso!",
-    text: "Ya eres parte de nuestra gran familia!",
-    icon: "success"
-  });
+    swal.fire({
+        title: "Registro Exitoso",
+        text: "¡Datos introducidos correctamente!",
+        icon: "success"
+    })
 })
+
+
+/*
+    private long id;
+    private String nombre;
+    private String sintomas;
+    private String clasificacion;
+    private String grado;
+    private Double probabilidadVida;
+*/

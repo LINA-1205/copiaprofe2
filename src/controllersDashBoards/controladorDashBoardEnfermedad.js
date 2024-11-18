@@ -2,53 +2,27 @@
 //1. QUEMAR O SIMULAR LOS DATOS 
 let enfermedadades = [
     {
-        id: 23,
-        nombre: "Neumonía Viral",
-        sintomas: ["fiebre alta", "dificultad para respirar", "tos persistente", "dolor en el pecho", "fatiga extrema", "escalofríos", "sudoración nocturna"],
+        id: 27,
+        nombre: "Meningitis Bacteriana",
+        sintomas: ["fiebre alta", "rigidez en el cuello", "dolor de cabeza severo", "náuseas", "confusión", "sensibilidad a la luz"],
         clasificacion: "grave",
         grado: "4",
         probabilidadVida: "Moderada",
     },
     {
-        id: 22,
-        nombre: "Resfriado Común",
-        sintomas: "congestión nasal, dolor de garganta, estornudos, moco claro, leve tos, fatiga leve",
-        clasificacion: "leve",
-        grado: "1",
-        probabilidadVida: "Alta"
-    },
-    {
-        id: 21,
-        nombre: "Gripe",
-        sintomas: "tos, fiebre alta, dolores musculares, fatiga, dolor de cabeza, congestión nasal, dolor de garganta",
+        id: 28,
+        nombre: "Sepsis",
+        sintomas: ["fiebre", "pulso acelerado", "dificultad para respirar", "presión arterial baja", "piel fría o pálida", "confusión"],
         clasificacion: "grave",
-        grado: "3",
-        probabilidadVida: "Baja",
+        grado: "4",
+        probabilidadVida: "Moderada",
     },
     {
-        id: 24,
-        nombre: "Coronavirus (COVID-19)",
-        sintomas: "fiebre, tos, dificultad respiratoria, pérdida de olfato",
-        clasificacion: "grave",
-        grado: "3",
-        probabilidadVida: "Media"
-    },
-    {
-        id: 25,
-        nombre: "Gripe aviar",
-        sintomas: "tos, fiebre, dolores musculares, dificultad respiratoria",
-        clasificacion: "grave",
-        grado: "2",
-        probabilidadVida: "Alta"
-    },
-    {
-        id: 26,
-        nombre: "Bronquitis",
-        sintomas: "tos persistente, fiebre, dolor en el pecho",
-        clasificacion: "moderada",
-        grado: "2",
-        probabilidadVida: "Baja"
-    }
+        id: 29,
+        nombre: "Encefalitis",
+        sintomas: ["fiebre alta", "convulsiones", "dolor de cabeza intenso", "confusión", "pérdida de consciencia", "rigidez en el cuello"],
+       
+    }    
 ];
 //2. CREAR UNA REFERENCIA A UNA ETIQUETA DE HTML DONDE VAMOS A RENDERIZAR
 let fila=document.getElementById("fila");
