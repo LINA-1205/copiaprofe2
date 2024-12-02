@@ -1,3 +1,5 @@
+import {registrarMedicamento} from "../services/serviciosmedicamento.js"
+
 let nombreMedicamento = document.getElementById("nombremedicamento");
 let presentacionMedicamento = document.getElementById("presentacionmedicamento");
 let dosisMedicamento = document.getElementById("dosismedicamento");
@@ -22,15 +24,22 @@ botonRegistroMedicamento.addEventListener("click", function(evento){
         fechaCaducidad: fechaCaducidadMedicamento.value,
         contraIndicaciones: contraIndicacionesMedicamento.value,
         registroInvima: registroMedicamento.value,
-        copago: tieneCopagoMedicamento.value
+        copago: tieneCopagoMedicamento.checked
     }
 
-    console.log(datosFormularioMedicamento);
-
-    Swal.fire({
-        title: "Registro Exitoso",
-        text: "¡Se ha registrado el medicamento satisfactoriamente!",
-        icon: "success"
+        // 6. Se envían los datos al back
+    
+        console.log(datosFormularioMedicamento)
+        registrarMedicamento(datosFormularioMedicamento)
+        .then(function(respuestaBack){
+          console.log(respuestaBack)
+          Swal.fire({
+            title: "Registro Exitoso",
+            text: "Ya eres parte de nuestra gran familia!",
+            icon: "success"
+          });
+        })
+        
+       
     });
-
-})
+    

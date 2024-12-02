@@ -1,3 +1,7 @@
+
+import {registrarSignoVital} from "../services/serviciossignovital.js"
+
+
 let nombreSignoVital = document.getElementById("nombresignovital");
 let valorSignoVital = document.getElementById("valorsignovital");
 let fechaMedidaSignoVital = document.getElementById("fechamedidasignovital");
@@ -15,13 +19,18 @@ botonRegistroSignoVital.addEventListener("click", function(evento){
       fechaMedida: fechaMedidaSignoVital.value
     };
     
-    // 6. Se envían los datos al back
+       // 6. Se envían los datos al back
     
-    console.log(datosFormularioSignoVital);
-    
-    Swal.fire({
-      title: "Registro Exitoso",
-      text: "Signos vitales insertados correctamente",
-      icon: "success"
-    });
-})
+       console.log(datosFormularioSignoVital)
+       registrarSignoVital(datosFormularioSignoVital)
+       .then(function(respuestaBack){
+         console.log(respuestaBack)
+         Swal.fire({
+           title: "Registro Exitoso",
+           text: "Ya eres parte de nuestra gran familia!",
+           icon: "success"
+         });
+       })
+       
+      
+});

@@ -1,3 +1,15 @@
+import {registrarMedico} from "../services/serviciosMedico.js"
+
+//OBJETIVO: Capturar los datos de un formulario 
+
+//1. por cada input, select, textarea del formulario se crea una variable 
+//2 por cada variable debo utilizar el DOM para asociar 
+//el html con javascript 
+
+
+//CONTROLADOR DEL FORMULARIO
+
+
 let nombreMedico = document.getElementById("nombremedico");
 let matriculaProfesionalMedico = document.getElementById("matriculamedico");
 let especialidadMedico = document.getElementById("especialidadmedico");
@@ -8,16 +20,19 @@ let telefonoMedico = document.getElementById("telefonomedico");
 let direccionMedico = document.getElementById("direccionmedico");
 let disponibleFinDeSemanaMedico = document.getElementById("disponibilidadmedico");
 
+// 3. Crear una variable para asociarla al id del boton que tengo en html
 
 let botonRegistroMedico = document.getElementById("botonregistromedico");
 
+// 4. Detectamos acciones o eventos en el boton
 botonRegistroMedico.addEventListener("click", function(evento){
 
     evento.preventDefault();
 
+// 5. Se crea un JSON que capture todos los datos del formulario
     let datosFormularioMedico = {
 
-        nombre: nombreMedico.value,
+        nombres: nombreMedico.value,
         matriculaProfesional: matriculaProfesionalMedico.value,
         especialidad: especialidadMedico.value,
         salario: salarioMedico.value,
@@ -25,15 +40,22 @@ botonRegistroMedico.addEventListener("click", function(evento){
         correo: correoMedico.value,
         telefono: telefonoMedico.value,
         direccionConsultorio:  direccionMedico.value,
-        finDeSemanaDisponible: disponibleFinDeSemanaMedico.value
+        disponibleFindesemana: disponibleFinDeSemanaMedico.checked
     }
 
-    console.log(datosFormularioMedico);
+// 6. Se envían los datos al back
 
-    Swal.fire({
-        title: "Registro Exitoso",
-        text: "¡El registro de medico ha sido exitoso!",
-        icon: "success"
-    });
+
+console.log(datosFormularioMedico)
+registrarMedico(datosFormularioMedico)
+.then(function(respuestaBack){
+  console.log(respuestaBack)
+  Swal.fire({
+    title: "Registro Exitoso",
+    text: "Ya eres parte de nuestra gran familia!",
+    icon: "success"
+  });
+})
+
 
 });
